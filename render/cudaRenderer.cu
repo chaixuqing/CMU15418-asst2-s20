@@ -411,7 +411,7 @@ __global__ void kernelRenderCircles() {
     int numberThreadsOfBlock  = blockDim.x * blockDim.y;
     int numberOfCircles = cuConstRendererParams.numberOfCircles;
 
-    const int numberCirclesPerIteration = 100;
+    const int numberCirclesPerIteration = 10;
     __shared__ bool inSection[numberCirclesPerIteration];
 
     for(size_t indexCicle=0; indexCicle < numberOfCircles; indexCicle += numberCirclesPerIteration){
